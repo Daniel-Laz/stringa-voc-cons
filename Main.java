@@ -29,7 +29,7 @@ public class Main {
         String vocali="";
         for (int i=0;i<x.length();i++){
             if (isVocal(x.charAt(i)))
-                    vocali=vocali+x.charAt(i);
+                    vocali+=x.charAt(i);
         }
         return vocali;
     }
@@ -38,7 +38,7 @@ public class Main {
         String consonanti="";
         for (int i=0;i<x.length();i++){
             if (isConsonant(x.charAt(i)))
-                    consonanti=consonanti+x.charAt(i);
+                    consonanti+=x.charAt(i);
         }
         return consonanti;
     }

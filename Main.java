@@ -7,13 +7,29 @@ public class Main {
         System.out.println("vocali: "+vocali(parola)+"; consonanti: "+consonanti(parola));
     }
 
+    private static boolean isVocal(char x){
+        boolean vocale=false;
+        if (x>='a'&&x<='z'){
+            if (x=='a'||x=='e'||x=='i'||x=='o'||x=='u')
+                vocale=true;
+        }
+        return vocale;
+    }
+
+    private static boolean isConsonant(char x){
+        boolean consonant=false;
+        if (x>='a'&&x<='z'){
+            if (x!='a'&&x!='e'&&x!='i'&&x!='o'&&x!='u')
+                consonant=true;
+        }
+        return consonant;
+    }
+
     private static String vocali(String x){
         String vocali="";
         for (int i=0;i<x.length();i++){
-            if (x.charAt(i)>='a'&&x.charAt(i)<='z'){
-                if (x.charAt(i)=='a'||x.charAt(i)=='e'||x.charAt(i)=='i'||x.charAt(i)=='o'||x.charAt(i)=='u')
+            if (isVocal(x.charAt(i)))
                     vocali=vocali+x.charAt(i);
-            }
         }
         return vocali;
     }
@@ -21,10 +37,8 @@ public class Main {
     private static String consonanti(String x){
         String consonanti="";
         for (int i=0;i<x.length();i++){
-            if (x.charAt(i)>='a'&&x.charAt(i)<='z'){
-                if (x.charAt(i)!='a'&&x.charAt(i)!='e'&&x.charAt(i)!='i'&&x.charAt(i)!='o'&&x.charAt(i)!='u')
+            if (isConsonant(x.charAt(i)))
                     consonanti=consonanti+x.charAt(i);
-            }
         }
         return consonanti;
     }

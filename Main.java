@@ -9,8 +9,8 @@ public class Main {
 
     private static boolean isVocal(char x){
         boolean vocale=false;
-        if (x>='a'&&x<='z'){
-            if (x=='a'||x=='e'||x=='i'||x=='o'||x=='u')
+        if (x>='a'&&x<='z'||x>='A'&&x<='Z'){
+            if (x=='a'||x=='e'||x=='i'||x=='o'||x=='u'||x=='A'||x=='E'||x=='I'||x=='O'||x=='U')
                 vocale=true;
         }
         return vocale;
@@ -18,8 +18,8 @@ public class Main {
 
     private static boolean isConsonant(char x){
         boolean consonant=false;
-        if (x>='a'&&x<='z'){
-            if (x!='a'&&x!='e'&&x!='i'&&x!='o'&&x!='u')
+        if (x>='a'&&x<='z'||x>='A'&&x<='Z'){
+            if (!isVocal(x))
                 consonant=true;
         }
         return consonant;
